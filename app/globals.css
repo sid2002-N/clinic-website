@@ -1,0 +1,22 @@
+@tailwind base;@tailwind components;@tailwind utilities;
+html{scroll-behavior:smooth;scroll-padding-top:90px;-webkit-text-size-adjust:100%}
+body{font-family:var(--font-sans),"Open Sans",system-ui,sans-serif;background:#fbfbfd;color:#1d1d1f;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+h1,h2,h3{letter-spacing:-.03em;line-height:1.08;font-weight:700}
+:focus-visible{outline:3px solid #0a7c78;outline-offset:3px;border-radius:8px}
+@supports (corner-shape:squircle){[class*="rounded-"]:not(.rounded-full){corner-shape:squircle}}
+.glass{position:relative;isolation:isolate;background:rgba(255,255,255,.62);-webkit-backdrop-filter:blur(22px) saturate(180%);backdrop-filter:blur(22px) saturate(180%);border:1px solid rgba(255,255,255,.75);box-shadow:inset 0 1px 0 rgba(255,255,255,.95),inset 0 -1px 0 rgba(255,255,255,.3),0 10px 40px rgba(20,30,40,.12)}
+.glass::after{content:"";position:absolute;inset:0;z-index:-1;border-radius:inherit;pointer-events:none;background:linear-gradient(135deg,rgba(255,255,255,.6) 0%,rgba(255,255,255,0) 38%,rgba(255,255,255,0) 62%,rgba(255,255,255,.3) 100%)}
+.glass-dark{position:relative;isolation:isolate;background:rgba(28,30,32,.62);-webkit-backdrop-filter:blur(30px) saturate(170%);backdrop-filter:blur(30px) saturate(170%);border:1px solid rgba(255,255,255,.16);box-shadow:inset 0 1px 0 rgba(255,255,255,.25),0 12px 40px rgba(0,0,0,.35);color:#fff}
+.btn{display:inline-flex;align-items:center;gap:.5rem;border-radius:999px;padding:.8rem 1.5rem;min-height:48px;font-weight:600;transition:transform .2s,background .2s,box-shadow .2s}
+.btn:active{transform:scale(.97)}
+.btn-p{background:#0a7c78;color:#fff}.btn-p:hover{background:#086864}
+.btn-a{background:#5be3d3;color:#1d1d1f}.btn-a:hover{background:#7aeadd}
+.btn-s{border:1.5px solid #0a7c78;color:#0a7c78}.btn-s:hover{background:#e6f4f2}
+.wrap{max-width:1180px;margin:0 auto;padding:0 1.25rem}
+@media(min-width:640px){.wrap{padding:0 1.5rem}}
+@keyframes marq{to{transform:translateX(-50%)}}
+@keyframes marq-r{from{transform:translateX(-50%)}to{transform:translateX(0)}}
+.marq{animation:marq 45s linear infinite}
+.marq-slow{animation-duration:70s}
+.marq-r{animation-name:marq-r;animation-duration:170s}
+@media (prefers-reduced-motion:reduce){*:not(.marq){animation:none!important;transition:none!important;scroll-behavior:auto!important}.marq{animation-duration:120s!important}}
